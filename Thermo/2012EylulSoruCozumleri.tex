@@ -1,0 +1,281 @@
+\documentclass[14pt]{BYUTextbook} 
+\usepackage[turkish]{babel}
+%\usepackage[a4paper,left=24.8mm,top=27.4mm,headsep=2\baselineskip,textwidth=107mm,marginparsep=8.2mm,marginparwidth=49.4mm,textheight=49\baselineskip,headheight=\baselineskip]{geometry}
+
+%\usepackage[outermargin=2cm,innermargin=5cm,marginparwidth=3cm,marginparsep=20pt]{geometry}
+\include{PhysNote.tex}
+\usepackage{IEEEtrantools}
+\usepackage{xkeyval}
+\usepackage{marginfix}
+\usepackage[latin5]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{verbatim}
+\usepackage{tikz}
+%\usepackage{picins}
+%\usepackage{mdwlist}
+\usepackage{siunitx}
+\newcommand*\mycirc[1]{%
+  \begin{tikzpicture}[baseline=(C.base)]
+	\node[draw,circle,inner sep=1pt](C) {#1};
+  \end{tikzpicture}
+}
+%%%%%%%%%%%%-------------%%%%%%%%%%%%%%%
+\newtheoremstyle{example}
+{3pt}
+{3pt}
+{}
+{}
+{\bf}
+{}
+{.5em}
+{}
+
+%\theoremstyle{example}
+%\newtheorem*{example}{Örnek:}
+%\newtheorem*{example}{Deneme}
+%%%%%%%%%%%%%%-------%%%%%%%%%%%%%%%
+%\usepackage[utf8]{inputenc} %utf8 kodlamasý
+%\AtBeginDocument{\shorthandoff{=}}% right after babel. It is same as kvsetkeys
+\usepackage{kvsetkeys} % to get rid of error due to babel and graphicx package 
+\let\setkeys\kvsetkeys % to get rid of error due to babel and graphicx package 
+%\uccode`\i='235 % \MakeUppercase{ijk} sorunu halletmek için
+%\lccode`\I='031
+%%latex baþlýklarýnda   metinlerde "i"
+%%karakterini "\.{ý}" þeklinde yaz.
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[overload]{textcase}%latex'in babel ve math üzerindeki sorunlar için
+%%%For Randomize and proofing
+%\usepackage[forpaper,nosolutions,allowrandomize,proofing]{eqexam}
+%\turnOnRandomize
+%\saveRandomSeed
+%\useRandomSeed{1463129777} %AGrubu
+%\useRandomSeed{1385641335} %BGrubu
+\usepackage[usecustomdesign,forpaper,solutionsafter,proofing]{eqexam}
+\usepackage{cancel}
+%\usepackage[margin=4cm]{geometry}
+%\usepackage[left=12mm,right=10mm,top=20mm,bottom=10mm]{geometry}
+\title[Hazýrlýk Sorularý]{9. Sýnýflar II.Sýnav Hazýrlýk Sorularý }
+%\subject[C1]{Modern Fizik: Iþýðýn Tanecik Kuramý}
+%\author{Özhan Fenerci}
+\keywords{Calculus I, Section 004}
+%\university{%
+%      Hatice Bayraktar Anadolu Teknik ve EML
+%}
+\date{\thisterm, \the\year}
+%\duedate{October 17, 2005}
+\examNameLabel{Ad ve Soyad:}
+\setlength{\columnsep}{50pt}
+\setlength{\columnseprule}{0.4pt}
+\setlength\columnwidth{10cm}
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+\sisetup{output-decimal-marker={,}}
+\sisetup{input-product= x}
+\sisetup{quotient-mode=fraction}
+\sisetup{output-product= \cdot}
+\sisetup{exponent-product=\cdot}
+\sisetup{open-bracket=\(,close-bracket=\),}
+\setlength{\parindent}{0mm}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\graphicspath{{/home/ofenerci/HB/Siniflar/figs/}}
+\begin{document}
+\centerline{\textbf{ITAP 2012 Eylül Kampý Soru Çözümleri}}
+\noindent
+Ad ve Soyad: Özhan Fenerci
+%\maketitle
+\begin{exam}{BolumI}
+  %\begin{multicols*}{2}
+  \begin{problem}[3ea](\textbf{Manida Termodinamik 25 Soru})
+	 Tek atomlu 1 mol ideal gazýn süreç denklemi $V(p+p_0)=sabit$
+	 denklemiyle verilmektedir. Gazýn hacmi ilk durumundan
+	 $\Delta V=\SI{0,01}{L}$ kadar arttýrýldýðýnda, gaza verilen ýsý miktarý $Q$
+	 ne kadardýr? Gazýn ilk durumdaki basýncýný $p_0=p_1=\si{1 atm}$ ve
+	 hacmini $V_1=\SI{22,4}{L}$ alýnýz.
+	 \begin{solution}
+     Termodinamiðin 1.Yasasýnýn denklemine göre,
+
+	   \[
+       \delta Q =  
+       pdV+\dfrac{3}{2}RdT=pdV+\dfrac{3}{2}d(RT)=pdV+\dfrac{3}{2}d(PV)
+     \]
+     dir. Soruda verilen verilere göre,
+     \[
+       V(p+p_0)=c=V_1(p_1+p_0)=2p_0V_1=2RT_1=\num{2x8.31x273}=\SI{4.54}{kJ}
+     \]
+     buluruz.
+     
+     $p=c/V-p_0$ gaz süreç denklemini kullanarak, $PV$ eþitliði için
+     \begin{align*}
+       pV=2p_0V_1-p_0V=p_0(2V_1-V)
+       \intertext{ve $PdV$ eþitliði için de}
+        pdV =p_0\left(\dfrac{2V_1}{V}-1\right)
+      \end{align*}
+      elde edilir. Bu eþitlikleri ýsý denklemine yerleþtirirsek,
+    \begin{align*}
+        \delta Q &=
+        pdV+\dfrac{3}{2}d(PV)=p_0\left(\dfrac{2V_1}{V}-1\right)-\dfrac{3}{2}p_0\\
+        &=p_0\left(\dfrac{2V_1}{V}-\dfrac{5}{2}\right)dV
+        \intertext{ve}
+        Q &=2P_0V_1\ln{\dfrac{V_1+\Delta V}{V_1}}-\dfrac{5}{2}P_0\Delta
+        V=2P_0V_1\ln\left(1+\dfrac{\Delta V}{V_1}\right)-p_0\Delta V \\
+        &\approx 2p_0V_1 \dfrac{\Delta V}{V_1}-\dfrac{5}{2}p_0\Delta
+        V=-\dfrac{1}{2}p_0\Delta V \\
+        Q&=-\dfrac{1}{2}RT_1\dfrac{\Delta
+        V}{V_1}=-\dfrac{1}{2}22.7\cdot\dfrac{1}{22.4}=-\SI{0.5}{J}
+      \end{align*}
+      bulunur.
+
+      \textbf{Cevap:}
+      \begin{answers}{5}
+        \bChoices
+        \Ans1   \SI{-0.5}{J}\eAns
+        \Ans0   \SI{0.5}{J}\eAns
+        \Ans0   \SI{1.5}{J}\eAns
+        \Ans0   \SI{-1.5}{J}\eAns
+        \Ans0   \SI{-3}{J}\eAns
+        \eChoices
+      \end{answers}
+	 \end{solution}
+	\end{problem}
+  \begin{problem}\textbf{(Meledin Mekanik 25 Soru)}
+    Yatayla $\alpha$ açýsý yapan sabit bir çubuða, bilya sistemlerinden oluþan
+    ve iki hafif kütleli çubuklardan oluþan bir cisim (C) baðlanmaktadýr.
+ bu cismin küçük titreþim periyotunu bulunuz. Sürtünmeyi ihmal ediniz. 
+ \marginfig[-2cm]{Meledin-Mekanik-2-ilkerSoru3.eps}{\label{fig:ikiCubuk}}
+  \begin{solution}
+   Sistem eðik düzlemde titreþim hareketi yaptýðý düþünülebilir. Bu
+   durumda top üzerine etkiyen yerçekim ivmesi $g\cos \alpha$ ile verilir. Topun
+   baðlý olduðu ipin uzunluðu da $l\sin\beta$ bulunur. Bu eþitlikler
+   serbest sarkaç denkleminde
+   \[
+     T=2\pi\sqrt{\dfrac{l}{g}}
+   \]
+  yerine konursa
+   \[
+     T=2\pi\sqrt{\dfrac{l\sin\beta}{g\cos\alpha}}
+   \]
+   bulunur.
+ \end{solution}
+ \end{problem}
+ \begin{problem}\textbf{(Meledin Optik 25 Soru)}
+   Araþtýrmacý karýncalarýn resmini yakýndan çekmek için uzatma halkasý
+   kullanarak, objektifi $l=\SI{7.5}{mm}$ öne çekmiþ, film ile objektif arasýndaki
+   mesafeyi artýrmýþtýr. Bu durumda uzaklýk ölçer göstergesinde deðer
+   $b=\SI{1.05}{m}$ gösterdiðinde görüntü netleþmektedir. Objektifin odak
+   uzaklýðý $F=\SI{50}{mm}$ dir. Karýncanýn objektife olan gerçek uzaklýðýný
+   bulunuz. Objektifi ince mercek olarak deðerlendiriniz. Uzaklýk ölçer
+   göstergesindeki b deðeri, uzatma halkasý takmadan cisimle objektif arasýndaki
+   uzaklýðý gösterir. 
+   \begin{solution}
+     Ýnce mercek denklemi 
+     \[
+       \dfrac{1}{f}=\dfrac{1}{a}+\dfrac{1}{b}
+     \]
+     dir. Burda $f$ merceðin odak uzaklýðý, $a$  cismin merceðe olan
+     uzaklýðýný, $b$ ise görüntünün merceðe olan uzaklýðýný gösterir. Soruda
+     verilen deðerleri yukarýdaki denklemde yerine koyarsak
+    \begin{align*}
+        \dfrac{1}{50}&=\dfrac{1}{x}+\dfrac{1}{1050} \\
+        x&=\SI{52.5}{mm}
+    \end{align*}
+    bulunur. Görüntü, objektif öne çekilmeden önce mercekten \SI{52.5}{mm}
+    uzaða düþmüþtür. Görüntünün merceðe olan uzaklýðý topla \SI{60}{mm} olur.
+    Bu deðeri ince mercek denkleminde yerine koyarak,
+    \[
+      \dfrac{1}{50}=\dfrac{1}{a^{'}}+\dfrac{1}{50}
+     \]
+     karýncanýn gerçek uzaklýðý
+    \begin{equation*}
+      \boxed{a^{'}=\SI{0.3}{m}}
+    \end{equation*}
+    bulunur.
+     
+   \end{solution}
+ \end{problem}
+ \begin{problem}\textbf{(Medelin Elektrostatik 25 Soru)}  Yükleri $q$ olan iki tane özdeþ kürecik yayla baðlýdýr. Cisimler titreþim
+   yaparken aralarýndaki mesafe $l$ ve $4l$ oluyor. Eðer yayýn serbest durumda
+   uzunluðu $2l$ ise bu verilere göre yayýn yay sabiti nedir?
+   \begin{solution}
+     Ýki yüklü kürenin sýkýþmýþ haldeki toplam enerjisi $E_i$; yayýn sýkýþma
+     enerijisi ile iki yüklü küreyi $2l$ uzaklýðýndan $l$ uzaklýðýna getirmek
+     için gereken elektriksel potansiyel enerjilerinin toplamýna
+     \marginfig{ElekYay}{}
+     \begin{equation*}
+       E_i=\dfrac{1}{2}\kappa x^2+kq^2l
+     \end{equation*}
+   \end{solution}
+   eþit olur. Burda $\kappa$ yayýn yay sabiti,
+   $k=\dfrac{1}{4\pi\epsilon_0}$ dýr.
+
+   Yayýn denge konumu $2l$'den $4l$'ye uzamasý durumunda toplam enerji $E_f$
+   \begin{equation*}
+     E_f=\dfrac{1}{2}\kappa (2l)^2+\dfrac{kq^2}{4l}
+   \end{equation*}
+   olur. Ýlk durumdaki enerji $E_i$ ile son durumdaki enerji $E_s$'yi
+   birbirine eþitliyerek 
+   \begin{align*}
+     \dfrac{1}{2}\kappa x^2+kq^2l &=\dfrac{1}{2}\kappa
+     (2l)^2+\dfrac{kq^2}{4l} \\
+     \dfrac{3kq^2}{4l} & =\dfrac{3\kappa l^2}{2}
+   \end{align*}
+   eþitliði bulunur. Bu eþitlikten yay sabiti $\kappa$,
+   \begin{equation*}
+     \boxed{ \kappa = \dfrac{q^2}{4\pi\epsilon_0\cdot 2l^3}}
+   \end{equation*}
+   bulunur.
+ \end{problem}
+ \begin{problem}\textbf{(Meledin Sýða Kapasitörler 25 Soru)}
+   Herbirinin sýðasý $C$ olan iki paralel plakalý kapasitör birbirleriyle
+   paralel baðlý olarak $U$ gerilime kadar yükleniyor ve ardýndan kaynaktan
+   ayrýlýyorlar. Kapasitörlerden birinin plakalarý diðerine  diðerine doðru hareket edebilir. Ýki
+   plaka arasýndaki mesafe, ilk mesafenin yarýsýna indiðinde plakanýn hýzý ne
+   olacaktýr? Herbir plakanýn kütlesi $M$ dir. Yerçekimini ihmal ediniz.
+   \begin{solution}
+     Sistemin eþdeðer sýðasý $2C$ dir. Yük korumundan
+     \begin{equation}
+      2CU=Q_1+Q_2 
+      \label{eq:yukKorunumu}
+     \end{equation}
+     bulunur. Paralel plakalý kapasitorün sýðasý $C=\epsilon_0\dfrac{A}{d}$ ile
+     verildiðinden, kapasitörlerden birinin plakalarý arasýndaki uzaklýk yarýya
+     indirildiðinde kapasitörün sýðasý iki katý artar. Plakalar birbirine
+     paralel baðlý olduðundan kapasitörlerin uçlarý arasýndaki potansiyel farký
+     sabit kalacaktýr. Kapasitörlerin potansiyellerini birbirine eþitlersek
+     \begin{align*}
+       \dfrac{Q_1}{2C}&=\dfrac{Q_2}{C} \\
+       Q_1&=2Q_2
+     \end{align*}
+     buluruz. Bu eþitlikleri (\ref{eq:yukKorunumu}) denklemine yerleþtirirsek
+     \begin{equation*}
+       Q_1=2Q_2=4\dfrac{CU}{3}
+     \end{equation*}
+     elde ederiz. Kondansatörler kaynaktan ayrýlmadan önceki enerjisine $W_i$
+     ve ayrýldýktan sonraki enerjilerine $W_s$ dersek, 
+     \begin{align*}
+       W_i&=2\dfrac{CU^2}{2} \\
+       W_s&=\dfrac{Q_1^2}{4C}+\dfrac{Q_2^2}{2C}=\dfrac{CU^2}{3}
+     \end{align*}
+     $W_s-W_i$ farký paralel plakalarýn hýzlanmasýna harcanacaðýndan, enerji
+     korunumundan
+     \begin{align*}
+       2\dfrac{Mv^2}{2}&=W_x-W_y&\\
+       &=2\frac{CU^2}{2}-\left(\frac{Q_1^2}{2\cdot 2C} +\frac{Q_2^2}{2C} \right) \\
+       &=\frac{CU^2}{3}
+     \end{align*}
+     buluruz. Plakanýn hýzý da
+     \begin{equation*}
+       \boxed{v=\sqrt{\frac{CU^2}{3M}}}
+     \end{equation*}
+     olur.
+  
+   \end{solution}
+ \end{problem}
+  %\end{multicols*}
+\end{exam}
+\end{document}
+
+
+

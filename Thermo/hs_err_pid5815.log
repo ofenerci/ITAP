@@ -1,0 +1,241 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb1e4f6ae, pid=5815, tid=3012364272
+#
+# JRE version: 6.0_26-b03
+# Java VM: Java HotSpot(TM) Client VM (20.1-b02 mixed mode, sharing linux-x86 )
+# Problematic frame:
+# C  [configmgr.uno.so+0x266ae]  _init+0x1f35a
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread is native thread
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x002e007d
+
+Registers:
+EAX=0x002e006d, EBX=0xb1e97ff4, ECX=0x00000000, EDX=0x00750073
+ESP=0xbfe73a20, EBP=0xb1e984e0, ESI=0x002e006d, EDI=0xa7e8bde8
+EIP=0xb1e4f6ae, EFLAGS=0x00010202, CR2=0x002e007d
+
+Top of Stack: (sp=0xbfe73a20)
+0xbfe73a20:   a7e8bde8 00000001 bfe73a58 b1e97ff4
+0xbfe73a30:   a7e8bde8 b77166ff b1e97ff4 b1e32084
+0xbfe73a40:   081ccd7c a7e8bde8 b1e98544 a7e8bf14
+0xbfe73a50:   08124110 081ccd78 b1e97ff4 a7e8bde8
+0xbfe73a60:   a7e8bde8 b77166bf 00000000 b1e97ff4
+0xbfe73a70:   a7e8bde8 b1e984e0 bfe73ad0 b1e564c5
+0xbfe73a80:   b1e984e0 bfe73ae8 bfe73acc bfe73ad0
+0xbfe73a90:   00000001 b1e42540 b1e42560 00000018 
+
+Instructions: (pc=0xb1e4f6ae)
+0xb1e4f68e:   55 64 8b 38 89 54 24 28 85 f6 89 7c 24 3c 75 10
+0xb1e4f69e:   eb 2e 8b 46 08 b9 01 00 00 00 85 c0 74 12 89 c6
+0xb1e4f6ae:   8b 56 10 39 d7 72 eb 8b 46 0c 31 c9 85 c0 75 ee
+0xb1e4f6be:   84 c9 75 16 39 d7 77 26 83 c4 4c 5b 5e 5f 5d c3 
+
+Register to memory mapping:
+
+EAX=
+[error occurred during error reporting (printing register info), id 0xb]
+
+Stack: [0xbfe25000,0xbfe75000],  sp=0xbfe73a20,  free space=314k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [configmgr.uno.so+0x266ae]  _init+0x1f35a
+
+
+---------------  P R O C E S S  ---------------
+
+VM state:at safepoint (shutting down)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0912be30] Threads_lock - owner thread: 0xace09c00
+
+Heap
+ def new generation   total 4992K, used 538K [0x7ed60000, 0x7f2c0000, 0x842b0000)
+  eden space 4480K,  12% used [0x7ed60000, 0x7ede6858, 0x7f1c0000)
+  from space 512K,   0% used [0x7f1c0000, 0x7f1c0000, 0x7f240000)
+  to   space 512K,   0% used [0x7f240000, 0x7f240000, 0x7f2c0000)
+ tenured generation   total 10944K, used 7306K [0x842b0000, 0x84d60000, 0x8ed60000)
+   the space 10944K,  66% used [0x842b0000, 0x849d28d0, 0x849d2a00, 0x84d60000)
+ compacting perm gen  total 12288K, used 1716K [0x8ed60000, 0x8f960000, 0x92d60000)
+   the space 12288K,  13% used [0x8ed60000, 0x8ef0d0a0, 0x8ef0d200, 0x8f960000)
+    ro space 10240K,  61% used [0x92d60000, 0x93389d08, 0x93389e00, 0x93760000)
+    rw space 12288K,  60% used [0x93760000, 0x93e9c660, 0x93e9c800, 0x94360000)
+
+Code Cache  [0xa862e000, 0xa872e000, 0xaa62e000)
+ total_blobs=460 nmethods=325 adapters=71 free_code_cache=32535808 largest_free_block=64
+
+Dynamic libraries:
+08048000-08049000 r-xp 00000000 08:02 44325      /usr/lib/libreoffice/program/soffice.bin
+08049000-0804a000 r--p 00000000 08:02 44325      /usr/lib/libreoffice/program/soffice.bin
+0804a000-0804b000 rw-p 00001000 08:02 44325      /usr/lib/libreoffice/program/soffice.bin
+080f4000-0a06a000 rw-p 00000000 00:00 0          [heap]
+7ed60000-7f2c0000 rw-p 00000000 00:00 0 
+7f2c0000-842b0000 rw-p 00000000 00:00 0 
+842b0000-84d60000 rw-p 00000000 00:00 0 
+84d60000-8ed60000 rw-p 00000000 00:00 0 
+8ed60000-8f960000 rw-p 00000000 00:00 0 
+8f960000-92d60000 rw-p 00000000 00:00 0 
+92d60000-9338a000 r--s 00001000 08:02 373314     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/classes.jsa
+9338a000-93760000 rw-p 00000000 00:00 0 
+93760000-93e9d000 rw-p 0062b000 08:02 373314     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/classes.jsa
+93e9d000-94360000 rw-p 00000000 00:00 0 
+94360000-94442000 rw-p 00d68000 08:02 373314     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/classes.jsa
+94442000-94760000 rw-p 00000000 00:00 0 
+94760000-94768000 r-xs 00e4a000 08:02 373314     /usr/lib/jvm/java-6-sun-1.6.0.26/jre/lib/i386/client/classes.jsa
+94768000-94b60000 rw-p 00000000 00:00 0 
+a3fed000-a3ff0000 ---p 00000000 00:00 0 
+a3ff0000-a403e000 rwxp 00000000 00:00 0 
+a403e000-a4041000 ---p 00000000 00:00 0 
+a4041000-a408f000 rwxp 00000000 00:00 0 
+a408f000-a40aa000 r-xp 00000000 08:02 44186      /usr/lib/libreoffice/program/libsrtrs1.so
+a40aa000-a40ab000 ---p 0001b000 08:02 44186      /usr/lib/libreoffice/program/libsrtrs1.so
+a40ab000-a40ac000 r--p 0001b000 08:02 44186      /usr/lib/libreoffice/program/libsrtrs1.so
+a40ac000-a40ad000 rw-p 0001c000 08:02 44186      /usr/lib/libreoffice/program/libsrtrs1.so
+a40ad000-a40eb000 r-xp 00000000 08:02 40941      /usr/lib/libreoffice/program/fps_office.uno.so
+a40eb000-a40ee000 r--p 0003d000 08:02 40941      /usr/lib/libreoffice/program/fps_office.uno.so
+a40ee000-a40ef000 rw-p 00040000 08:02 40941      /usr/lib/libreoffice/program/fps_office.uno.so
+a40ef000-a40ff000 rw-p 00000000 00:00 0 
+a413a000-a41b5000 r-xp 00000000 08:02 44314      /usr/lib/libreoffice/program/librtftoklo.so
+a41b5000-a41b6000 r--p 0007a000 08:02 44314      /usr/lib/libreoffice/program/librtftoklo.so
+a41b6000-a41bc000 rw-p 0007b000 08:02 44314      /usr/lib/libreoffice/program/librtftoklo.so
+a41bc000-a445a000 r-xp 00000000 08:02 44072      /usr/lib/libreoffice/program/libooxmllo.so
+a445a000-a4461000 r--p 0029d000 08:02 44072      /usr/lib/libreoffice/program/libooxmllo.so
+a4461000-a4465000 rw-p 002a4000 08:02 44072      /usr/lib/libreoffice/program/libooxmllo.so
+a4465000-a446d000 rw-p 00000000 00:00 0 
+a446d000-a4554000 r-xp 00000000 08:02 44184      /usr/lib/libreoffice/program/libdoctoklo.so
+a4554000-a4555000 ---p 000e7000 08:02 44184      /usr/lib/libreoffice/program/libdoctoklo.so
+a4555000-a455a000 r--p 000e7000 08:02 44184      /usr/lib/libreoffice/program/libdoctoklo.so
+a455a000-a455b000 rw-p 000ec000 08:02 44184      /usr/lib/libreoffice/program/libdoctoklo.so
+a455b000-a45fe000 r-xp 00000000 08:02 44185      /usr/lib/libreoffice/program/libresourcemodello.so
+a45fe000-a45ff000 r--p 000a2000 08:02 44185      /usr/lib/libreoffice/program/libresourcemodello.so
+a45ff000-a4600000 rw-p 000a3000 08:02 44185      /usr/lib/libreoffice/program/libresourcemodello.so
+a4600000-a46f4000 rw-p 00000000 00:00 0 
+a46f4000-a4700000 ---p 00000000 00:00 0 
+a4715000-a4725000 rw-p 00000000 00:00 0 
+a4725000-a473a000 r-xp 00000000 08:02 450244     /usr/lib/libreoffice/program/libwriterfilterlo.so
+a473a000-a473b000 r--p 00015000 08:02 450244     /usr/lib/libreoffice/program/libwriterfilterlo.so
+a473b000-a473c000 rw-p 00016000 08:02 450244     /usr/lib/libreoffice/program/libwriterfilterlo.so
+a473c000-a474c000 rw-p 00000000 00:00 0 
+a475c000-a475d000 ---p 00000000 00:00 0 
+a475d000-a4f5d000 rwxp 00000000 00:00 0 
+a4f5d000-a4f66000 r-xp 00000000 08:02 44237      /usr/lib/libreoffice/program/libmcnttype.so
+a4f66000-a4f67000 r--p 00009000 08:02 44237      /usr/lib/libreoffice/program/libmcnttype.so
+a4f67000-a4f68000 rw-p 0000a000 08:02 44237      /usr/lib/libreoffice/program/libmcnttype.so
+a66f9000-a66fa000 ---p 00000000 00:00 0 
+a66fa000-a6efa000 rwxp 00000000 00:00 0 
+a7147000-a73cd000 r-xp 00000000 08:02 450269     /usr/lib/libreoffice/program/libdbalo.so
+a73cd000-a73e1000 r--p 00285000 08:02 450269     /usr/lib/libreoffice/program/libdbalo.so
+a73e1000-a73e3000 rw-p 00299000 08:02 450269     /usr/lib/libreoffice/program/libdbalo.so
+a73e3000-a73e5000 rw-p 00000000 00:00 0 
+a73e5000-a7444000 r-xp 00000000 08:02 450252     /usr/lib/libreoffice/program/libdbaxmllo.so
+a7444000-a7446000 r--p 0005f000 08:02 450252     /usr/lib/libreoffice/program/libdbaxmllo.so
+a7446000-a7447000 rw-p 00061000 08:02 450252     /usr/lib/libreoffice/program/libdbaxmllo.so
+a7447000-a7448000 rw-p 00000000 00:00 0 
+a7448000-a7620000 r-xp 00000000 08:02 452035     /usr/lib/libreoffice/program/libbf_svtlo.so
+a7620000-a7629000 r--p 001d7000 08:02 452035     /usr/lib/libreoffice/program/libbf_svtlo.so
+a7629000-a762b000 rw-p 001e0000 08:02 452035     /usr/lib/libreoffice/program/libbf_svtlo.so
+a762b000-a762c000 rw-p 00000000 00:00 0 
+a762c000-a7634000 r-xp 00000000 08:02 452032     /usr/lib/libreoffice/program/libbindetlo.so
+a7634000-a7635000 ---p 00008000 08:02 452032     /usr/lib/libreoffice/program/libbindetlo.so
+a7635000-a7636000 r--p 00008000 08:02 452032     /usr/lib/libreoffice/program/libbindetlo.so
+a7636000-a7637000 rw-p 00009000 08:02 452032     /usr/lib/libreoffice/program/libbindetlo.so
+a7637000-a7642000 r-xp 00000000 08:02 451687     /usr/lib/libreoffice/program/libsmdlo.so
+a7642000-a7643000 r--p 0000a000 08:02 451687     /usr/lib/libreoffice/program/libsmdlo.so
+a7643000-a7644000 rw-p 0000b000 08:02 451687     /usr/lib/libreoffice/program/libsmdlo.so
+a7644000-a76b9000 r-xp 00000000 08:02 44205      /usr/lib/libreoffice/program/libfwllo.so
+a76b9000-a76ba000 ---p 00075000 08:02 44205      /usr/lib/libreoffice/program/libfwllo.so
+a76ba000-a76bd000 r--p 00075000 08:02 44205      /usr/lib/libreoffice/program/libfwllo.so
+a76bd000-a76be000 rw-p 00078000 08:02 44205      /usr/lib/libreoffice/program/libfwllo.so
+a76be000-a76ca000 r-xp 00000000 08:02 450204     /usr/lib/libreoffice/program/libsddlo.so
+a76ca000-a76cb000 r--p 0000b000 08:02 450204     /usr/lib/libreoffice/program/libsddlo.so
+a76cb000-a76cc000 rw-p 0000c000 08:02 450204     /usr/lib/libreoffice/program/libsddlo.so
+a76cc000-a7728000 r-xp 00000000 08:02 450233     /usr/lib/libreoffice/program/libwpftlo.so
+a7728000-a772a000 r--p 0005b000 08:02 450233     /usr/lib/libreoffice/program/libwpftlo.so
+a772a000-a772b000 rw-p 0005d000 08:02 450233     /usr/lib/libreoffice/program/libwpftlo.so
+a772b000-a7794000 r-xp 00000000 08:02 541466     /usr/lib/libwps-0.2.so.2.0.7
+a7794000-a7796000 rw-p 00068000 08:02 541466     /usr/lib/libwps-0.2.so.2.0.7
+a7796000-a77d9000 r-xp 00000000 08:02 450243     /usr/lib/libreoffice/program/libmsworkslo.so
+a77d9000-a77da000 r--p 00042000 08:02 450243     /usr/lib/libreoffice/program/libmsworkslo.so
+a77da000-a77db000 rw-p 00043000 08:02 450243     /usr/lib/libreoffice/program/libmsworkslo.so
+a77db000-a7933000 r-xp 00000000 08:02 450242     /usr/lib/libreoffice/program/liblwpftlo.so
+a7933000-a793b000 r--p 00158000 08:02 450242     /usr/lib/libreoffice/program/liblwpftlo.so
+a793b000-a793c000 rw-p 00160000 08:02 450242     /usr/lib/libreoffice/program/liblwpftlo.so
+a793c000-a796d000 r-xp 00000000 08:02 450196     /usr/lib/libreoffice/program/libwpgimportlo.so
+a796d000-a796e000 r--p 00030000 08:02 450196     /usr/lib/libreoffice/program/libwpgimportlo.so
+a796e000-a796f000 rw-p 00031000 08:02 450196     /usr/lib/libreoffice/program/libwpgimportlo.so
+a796f000-a79d6000 r-xp 00000000 08:02 319984     /usr/lib/libvisio-0.0.so.0.0.17
+a79d6000-a79d8000 rw-p 00066000 08:02 319984     /usr/lib/libvisio-0.0.so.0.0.17
+a79d8000-a7a01000 r-xp 00000000 08:02 540438     /usr/lib/libwpg-0.2.so.2.0.1
+a7a01000-a7a02000 rw-p 00029000 08:02 540438     /usr/lib/libwpg-0.2.so.2.0.1
+a7a02000-a7a10000 r-xp 00000000 08:02 557884     /usr/lib/libwpd-stream-0.9.so.9.0.4
+a7a10000-a7a11000 r--p 0000d000 08:02 557884     /usr/lib/libwpd-stream-0.9.so.9.0.4
+a7a11000-a7a12000 rw-p 0000e000 08:02 557884     /usr/lib/libwpd-stream-0.9.so.9.0.4
+a7a12000-a7ad5000 r-xp 00000000 08:02 558042     /usr/lib/libwpd-0.9.so.9.0.4
+a7ad5000-a7ad6000 ---p 000c3000 08:02 558042     /usr/lib/libwpd-0.9.so.9.0.4
+a7ad6000-a7ad9000 r--p 000c3000 08:02 558042     /usr/lib/libwpd-0.9.so.9.0.4
+a7ad9000-a7adb000 rw-p 000c6000 08:02 558042     /usr/lib/libwpd-0.9.so.9.0.4
+a7adc000-a7ae8000 r-xp 00000000 08:02 450230     /usr/lib/libreoffice/program/libscdlo.so
+a7ae8000-a7ae9000 r--p 0000b000 08:02 450230     /usr/lib/libreoffice/program/libscdlo.so
+a7ae9000-a7aea000 rw-p 0000c000 08:02 450230     /usr/lib/libreoffice/program/libscdlo.so
+a7aea000-a7b01000 r-xp 00000000 08:02 450235     /usr/lib/libreoffice/program/libt602filterlo.so
+a7b01000-a7b02000 r--p 00016000 08:02 450235     /usr/lib/libreoffice/program/libt602filterlo.so
+a7b02000-a7b03000 rw-p 00017000 08:02 450235     /usr/lib/libreoffice/program/libt602filterlo.so
+a7b03000-a7b34000 r-xp 00000000 08:02 450201     /usr/lib/libreoffice/program/libvisioimportlo.so
+a7b34000-a7b35000 r--p 00030000 08:02 450201     /usr/lib/libreoffice/program/libvisioimportlo.so
+a7b35000-a7b36000 rw-p 00031000 08:02 450201     /usr/lib/libreoffice/program/libvisioimportlo.so
+a7b36000-a7c4e000 r-xp 00000000 08:02 450203     /usr/lib/libreoffice/program/libsvgfilterlo.so
+a7c4e000-a7c52000 r--p 00117000 08:02 450203     /usr/lib/libreoffice/program/libsvgfilterlo.so
+a7c52000-a7c53000 rw-p 0011b000 08:02 450203     /usr/lib/libreoffice/program/libsvgfilterlo.so
+a7c53000-a7ca8000 r-xp 00000000 08:02 44189      /usr/lib/libreoffice/program/libxoflo.so
+a7ca8000-a7caa000 r--p 00055000 08:02 44189      /usr/lib/libreoffice/program/libxoflo.so
+a7caa000-a7cb5000 rw-p 00057000 08:02 44189      /usr/lib/libreoffice/program/libxoflo.so
+a7cb5000-a7d55000 r-xp 00000000 08:02 450239     /usr/lib/libreoffice/program/libhwplo.so
+a7d55000-a7d57000 r--p 0009f000 08:02 450239     /usr/lib/libreoffice/program/libhwplo.so
+a7d57000-a7d5c000 rw-p 000a1000 08:02 450239     /usr/lib/libreoffice/program/libhwplo.so
+a7d5c000-a7d5d000 rw-p 00000000 00:00 0 
+a7daf000-a7db2000 ---p 00000000 00:00 0 
+a7db2000-a7e00000 rwxp 00000000 00:00 0 
+a7e00000-a7eff000 rw-p 00000000 00:00 0 
+a7eff000-a7f00000 ---p 00000000 00:00 0 
+a7f02000-a7f0a000 r-xp 00000000 08:02 44356      /usr/lib/libreoffice/program/libxmlfdlo.so
+a7f0a000-a7f0b000 r--p 00007000 08:02 44356      /usr/lib/libreoffice/program/libxmlfdlo.so
+a7f0b000-a7f0c000 rw-p 00008000 08:02 44356      /usr/lib/libreoffice/program/libxmlfdlo.so
+a7f0c000-a7f1b000 r-xp 00000000 08:02 44077      /usr/lib/libreoffice/program/liblnthlo.so
+a7f1b000-a7f1c000 r--p 0000f000 08:02 44077      /usr/lib/libreoffice/program/liblnthlo.so
+a7f1c000-a7f1d000 rw-p 00010000 08:02 44077      /usr/lib/libreoffice/program/liblnthlo.so
+a7f1d000-a7f6e000 r-xp 00000000 08:02 425269     /usr/lib/i386-linux-gnu/libhunspell-1.3.so.0.0.0
+a7f6e000-a7f72000 rw-p 00051000 08:02 425269     /usr/lib/i386-linux-gnu/libhunspell-1.3.so.0.0.0
+a7f75000-a7f78000 r-xp 00000000 08:02 44239      /usr/lib/libreoffice/program/fpicker.uno.so
+a7f78000-a7f79000 r--p 00002000 08:02 44239      /usr/lib/libreoffice/program/fpicker.uno.so
+a7f79000-a7f7a000 rw-p 00003000 08:02 44239      /usr/lib/libreoffice/program/fpicker.uno.so
+a7f7a000-a7f7b000 r-xs 00000000 08:02 214971     /root/.execoooos5c1C (deleted)
+a7f7b000-a7f7c000 rw-s 00000000 08:02 214971     /root/.execoooos5c1C (deleted)
+a7f7c000-a7f7e000 r-xp 00000000 08:02 539859     /usr/lib/libmythes-1.2.so.0.0.0
+a7f7e000-a7f7f000 rw-p 00001000 08:02 539859     /usr/lib/libmythes-1.2.so.0.0.0
+a7f7f000-a7f84000 r-xp 00000000 08:02 131810     /usr/lib/libhyphen.so.0.2.1
+a7f84000-a7f85000 rw-p 00004000 08:02 131810     /usr/lib/libhyphen.so.0.2.1
+a7f85000-a7f93000 r-xp 00000000 08:02 44095      /usr/lib/libreoffice/program/libhyphenlo.so
+a7f93000-a7f94000 r--p 0000d000 08:02 44095      /usr/lib/libreoffice/program/libhyphenlo.so
+a7f94000-a7f95000 rw-p 0000e000 08:02 44095      /usr/lib/libreoffice/program/libhyphenlo.so
+a7f95000-a7f96000 r-xs 00000000 08:02 214940     /root/.execooo6yxOrw (deleted)
+a7f96000-a7f97000 rw-s 00000000 08:02 214940     /root/.execooo6yxOrw (deleted)
+a7f97000-a7f98000 r--s 00003000 08:02 581937     /usr/lib/libreoffice/share/extensions/zemberek-ooo/ZemberekHyphenator.uno.jar
+a7f98000-a7f99000 r-xs 00000000 08:02 214664     /root/.execoooiXrrkq (deleted)
+a7f99000-a7f9a000 rw-s 00000000 08:02 214664     /root/.execoooiXrrkq (deleted)
+a7f9a000-a7fa7000 r-xp 00000000 08:02 44085      /usr/lib/libreoffice/program/libspelllo.so
+a7fa7000-a7fa8000 r--p 0000c000 08:02 44085      /usr/lib/libreoffice/program/libspelllo.so
+a7fa8000-a7fa9000 rw-p 0000d000 08:02 44085      /usr/lib/libreoffice/program/libspelllo.so
+a7fa9000-a7faa000 r-xs 00000000 08:02 214655     /root/.execooo4KDOzk (deleted)
+a7faa000-a7fab000 rw-s 00000000 08:02 214655     /root/.execooo4KDOzk (deleted)
+a7fab000-a7fac000 r-xs 00000000 08:02 214648     /root/.execoooDRGK4e (deleted)
+a7fac000-a7fad000 rw-s 00000000 08:02 214648     /root/.execoooDRGK4e (deleted)
+a7fad000-a7fae000 r-xs 00000000 08:02 214628     /root/.execoool1PpA9 (deleted)
+a7fae000-a7faf000 rw-s 00000000 08:02 214628     /root/.execoool1PpA9 (deleted)
+a7faf000-a7fb0000 r--s 0002d00
